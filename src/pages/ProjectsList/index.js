@@ -6,6 +6,6 @@ const ProjectsList = () => {
     useEffect(() => {
         // listFiles('myFolder/').catch(console.error);
     }, []);
-    return (_jsx("div", { className: 'flex', children: _jsx(PageHeading, { text: 'Projects' }) }));
+    return (_jsx("div", { className: 'flex w-full', children: _jsx(PageHeading, { text: 'jry' }) }));
 };
 export default ProjectsList;
