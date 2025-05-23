@@ -5,11 +5,15 @@
     { "path": "./tsconfig.node.json" }
   ],
   "compilerOptions": {
-    "noEmitOnError": false,     // Build even with errors
-    "skipLibCheck": true,       // Skip type checking of declaration files
-    "strict": false,            // Disable strict mode
-    "noImplicitAny": false,     // Allow implicit any
-    // "suppressImplicitAnyIndexErrors": true
+    "target": "ESNext",
+    "module": "ESNext",
+    "jsx": "react-jsx",
+    "moduleResolution": "Node",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": false
   },
   "ts-node": {
     "transpileOnly": true

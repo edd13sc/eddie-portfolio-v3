@@ -9,8 +9,8 @@ const ProjectsList = () => {
   }, [])
 
   return (
-    <div className='flex'>
-      <PageHeading text='Projects' />
+    <div className='flex w-full'>
+      <PageHeading text='jry' />
     </div>
   )
 }
