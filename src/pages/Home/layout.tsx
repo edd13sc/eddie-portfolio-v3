@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { portrailImagesOfMe } from '../../util/data/portraitImgs';
 import { Link } from 'react-router-dom';
+import Atropos from 'atropos/react';
 
 const DynamicGrid = () => {
-    const [hoveredCell, setHoveredCell] = useState(null);
+    const [hoveredCell, setHoveredCell] = useState<number>(0);
     const [currentPortraitImg, setCurrentPortraitImg] = useState(portrailImagesOfMe[2]?.url)
 
-    const handleMouseEnter = (cellId) => {
+    const handleMouseEnter = (cellId: any) => {
         setHoveredCell(cellId);
     };
 
@@ -87,10 +88,12 @@ const DynamicGrid = () => {
                 autoPlay
                 muted
                 loop
-                className={`'w-vw absolute scale-150 z-10 select-none h-full pointer-events-none 
+                className={`'w-vw absolute scale-y-130 z-10 select-none h-full pointer-events-none 
                             ${hoveredCell === 3 ? 'opacity-60' : 'opacity-0'} t-0 l-0 r-0 b-0'`}
                 style={{
-                    mixBlendMode: 'screen'
+                    mixBlendMode: 'screen',
+                    width: '105vw',
+                    height: '100vh'
                 }}
             >
                 <source src="https://storage.cloud.google.com/engineered-imagination/grunge_textures.mp4" type="video/mp4" />
@@ -102,10 +105,10 @@ const DynamicGrid = () => {
                 style={{
                     ...gridStyle,
                     gridTemplateAreas: `
-            "cell1 cell2 cell2"
-            "cell1 cell3 cell4"
-            "cell5 cell5 cell4"
-          `
+                    "cell1 cell2 cell2"
+                    "cell1 cell3 cell4"
+                    "cell5 cell5 cell4"
+                    `
                 }}
             >
                 {/* Cell 1 - Large left cell */}
@@ -129,7 +132,10 @@ const DynamicGrid = () => {
                             fontFamily: 'Space Grotesk'
                         }}
                     >
-                        Projects
+                        <Atropos>
+                            Projects
+                        </Atropos>
+
                     </span>
 
                     <video
@@ -169,14 +175,19 @@ const DynamicGrid = () => {
                             fontFamily: 'Space Grotesk'
                         }}
                     >
+                        {/* <Atropos
+                            activeOffset={40}
+                            shadow={false}
+                        > */}
                         About
+                        {/* </Atropos> */}
                     </span>
                     <video
                         autoPlay
                         muted
                         loop
                         className={`max-w-[1200px] min-w-[1500px] scale-[0.8] absolute z-10 select-none pointer-events-none
-                            ${hoveredCell === 5 ? 'opacity-100' : 'opacity-0'}`}
+                            ${hoveredCell === 2 ? 'opacity-100' : 'opacity-0'}`}
                         style={{
                             mixBlendMode: 'screen',
                             transform: 'rotate(90deg)'
@@ -216,7 +227,7 @@ const DynamicGrid = () => {
                             className='h-full w-full absolute z-20 opacity-90 fit-cover transition-all duration-800 ease-out'
                             style={{
                                 filter: hoveredCell === 3 ? 'saturate(0) contrast(170%) blur(10px)' : 'saturate(1) contrast(1) blur(0)',
-                                mixBlendMode: hoveredCell === 3 ? 'screen' : 'none',
+                                mixBlendMode: hoveredCell === 3 ? 'screen' : undefined,
                                 objectFit: 'cover'
                             }}
                         />

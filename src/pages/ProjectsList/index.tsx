@@ -1,8 +1,17 @@
-import React from 'react'
+import { useEffect } from 'react'
+import { PageHeading } from '../../components/Headings'
+// import { listFiles } from '../../util/data/extractDataFromGoogle';
 
 const ProjectsList = () => {
+
+  useEffect(() => {
+    // listFiles('myFolder/').catch(console.error);
+  }, [])
+
   return (
-    <div>ProjectsList</div>
+    <div className='flex'>
+      <PageHeading text='Projects' />
+    </div>
   )
 }
 

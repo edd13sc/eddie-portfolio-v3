@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import '/node_modules/atropos//atropos.css'
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
