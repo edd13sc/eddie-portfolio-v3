@@ -142,7 +142,7 @@ const DynamicGrid = () => {
                         autoPlay
                         muted
                         loop
-                        className={`' h-full absolute z-10 select-none h-full pointer-events-none bg-red-500 scale-[2.1]
+                        className={`' h-full absolute z-10 select-none h-full pointer-events-none bg-[#0736FE] scale-[2.1]
                                     ${hoveredCell === 1 ? 'opacity-100' : 'opacity-0'}`}
                         style={{
                             mixBlendMode: 'screen'
@@ -226,7 +226,7 @@ const DynamicGrid = () => {
                             alt='Image of Eddie'
                             className='h-full w-full absolute z-20 opacity-90 fit-cover transition-all duration-800 ease-out'
                             style={{
-                                filter: hoveredCell === 3 ? 'saturate(0) contrast(170%) blur(10px)' : 'saturate(1) contrast(1) blur(0)',
+                                filter: hoveredCell === 3 ? 'saturate(0) contrast(170%) blur(10px)' : 'saturate(0) contrast(1) blur(0)',
                                 mixBlendMode: hoveredCell === 3 ? 'screen' : undefined,
                                 objectFit: 'cover'
                             }}
@@ -236,7 +236,7 @@ const DynamicGrid = () => {
                             alt='Image of Eddie'
                             className='h-full w-full absolute z-10 opacity-100 fit-cover transition-all duration-800 ease-out'
                             style={{
-                                filter: hoveredCell === 3 ? 'saturate(0) contrast(190%) invert(0)' : 'saturate(1) contrast(1)',
+                                filter: hoveredCell === 3 ? 'saturate(0) contrast(190%) invert(0)' : 'saturate(1) contrast(0.75)',
                                 objectFit: 'cover'
                             }}
                         />

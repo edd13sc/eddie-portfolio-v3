@@ -1,8 +1,12 @@
 // import React from 'react'
 
+import { PageHeading } from "../../components/Headings"
+
 const FieldsOfWork = () => {
     return (
-        <div>FieldsOfWork</div>
+        <div>
+            <PageHeading text='Projects' />
+        </div>
     )
 }
 

@@ -95,7 +95,7 @@ const DynamicGrid = () => {
                                     fontSize: hoveredCell === 1 ? '3rem' : '2rem',
                                     transform: hoveredCell === 1 ? 'scale(1.1)' : 'scale(1)',
                                     fontFamily: 'Space Grotesk'
-                                }, children: _jsx(Atropos, { children: "Projects" }) }), _jsxs("video", { autoPlay: true, muted: true, loop: true, className: `' h-full absolute z-10 select-none h-full pointer-events-none bg-red-500 scale-[2.1]
+                                }, children: _jsx(Atropos, { children: "Projects" }) }), _jsxs("video", { autoPlay: true, muted: true, loop: true, className: `' h-full absolute z-10 select-none h-full pointer-events-none bg-[#0736FE] scale-[2.1]
                                     ${hoveredCell === 1 ? 'opacity-100' : 'opacity-0'}`, style: {
                                     mixBlendMode: 'screen'
                                 }, children: [_jsx("source", { src: "https://storage.googleapis.com/engineered-imagination/design_showcase.mp4", type: "video/mp4" }), "Your browser does not support the video tag."] })] }), _jsxs(Link, { to: 'about', className: "bg-gray-800 border-2 border-gray-200 transition-all duration-500 ease-out cursor-pointer flex items-center justify-center overflow-hidden", style: {
@@ -123,11 +123,11 @@ const DynamicGrid = () => {
                                 transform: hoveredCell === 3 ? 'scale(1.1)' : 'scale(1)',
                                 fontFamily: 'Space Grotesk',
                             }, children: [_jsx("img", { src: currentPortraitImg, alt: 'Image of Eddie', className: 'h-full w-full absolute z-20 opacity-90 fit-cover transition-all duration-800 ease-out', style: {
-                                        filter: hoveredCell === 3 ? 'saturate(0) contrast(170%) blur(10px)' : 'saturate(1) contrast(1) blur(0)',
+                                        filter: hoveredCell === 3 ? 'saturate(0) contrast(170%) blur(10px)' : 'saturate(0) contrast(1) blur(0)',
                                         mixBlendMode: hoveredCell === 3 ? 'screen' : undefined,
                                         objectFit: 'cover'
                                     } }), _jsx("img", { src: currentPortraitImg, alt: 'Image of Eddie', className: 'h-full w-full absolute z-10 opacity-100 fit-cover transition-all duration-800 ease-out', style: {
-                                        filter: hoveredCell === 3 ? 'saturate(0) contrast(190%) invert(0)' : 'saturate(1) contrast(1)',
+                                        filter: hoveredCell === 3 ? 'saturate(0) contrast(190%) invert(0)' : 'saturate(1) contrast(0.75)',
                                         objectFit: 'cover'
                                     } })] }) }), _jsxs(Link, { to: 'skills', className: "bg-gray-800 border-2 border-gray-200 transition-all duration-500 ease-out cursor-pointer flex items-center justify-center overflow-hidden", style: {
                             gridArea: 'cell4',
