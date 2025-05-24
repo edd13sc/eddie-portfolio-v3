@@ -43,13 +43,13 @@ PlatformIcon.displayName = 'PlatformIcon';
 
 // Skeleton component for loading state
 const ProjectCardSkeleton = () => (
-    <div className="overflow-hidden w-full min-w-[250px] max-w-[600px] border border-gray-800 flex flex-col gap-6 h-fit">
-        <Skeleton.Image
+    <div className="overflow-hidden w-full min-w-[250px] max-w-[600px] border border-neutral-800 flex flex-col gap-6 h-fit">
+        <Skeleton
             style={{ width: '100%', height: '200px' }}
             active
         />
         <div className="p-6 mt-[-120px]">
-            <div className="flex flex-col gap-6 w-full p-4 bg-[#010101] border border-gray-800">
+            <div className="flex flex-col gap-6 w-full p-4 bg-[#010101] border border-neutral-800">
                 <div className="flex flex-col gap-3">
                     <Skeleton.Input
                         style={{ width: '60%', height: '24px' }}
@@ -124,7 +124,7 @@ export const ProjectCard: React.FC<IProductCard> = memo((props: IProductCard) =>
 
     return (
         <div
-            className="overflow-hidden w-full min-w-[250px] max-w-[600px] border border-gray-800 cursor-pointer 
+            className="overflow-hidden w-full min-w-[250px] max-w-[600px] border border-neutral-800 cursor-pointer 
             transition-all duration-700 ease-in-out flex flex-col gap-6 h-fit"
             style={cardStyle}
         >
@@ -141,13 +141,13 @@ export const ProjectCard: React.FC<IProductCard> = memo((props: IProductCard) =>
                 <Image
                     src={props.imgUrl}
                     alt={props.imgAlt}
-                    className="bg-gray-700 w-full h-[200px] transition-all duration-200 ease-in-out"
+                    className="bg-neutral-700 w-full h-[200px] transition-all duration-200 ease-in-out"
                     style={imageStyle}
                     onLoad={handleImageLoad}
                     loading="lazy"
                     placeholder={
-                        <Skeleton.Image
-                            style={{ width: '100%', height: '200px' }}
+                        <Skeleton
+                            style={{ width: '100%', height: '300px' }}
                             active
                         />
                     }
@@ -158,7 +158,7 @@ export const ProjectCard: React.FC<IProductCard> = memo((props: IProductCard) =>
             {/* Content with Atropos effect */}
             <Suspense fallback={
                 <div className="p-6 mt-[-120px]">
-                    <div className="flex flex-col gap-6 w-full p-4 bg-[#010101] border border-gray-800">
+                    <div className="flex flex-col gap-6 w-full p-4 bg-[#010101] border border-neutral-800">
                         <Skeleton paragraph={{ rows: 4 }} active />
                     </div>
                 </div>
@@ -170,7 +170,7 @@ export const ProjectCard: React.FC<IProductCard> = memo((props: IProductCard) =>
                         highlight={false}
                     >
                         <div
-                            className="flex flex-col gap-6 w-full p-4 bg-[#010101] border border-gray-800 hover:invert-[1] 
+                            className="flex flex-col gap-6 w-full p-4 bg-[#010101] border border-neutral-800 hover:invert-[1] 
                             transition-all duration-300 ease-in-out"
                             style={contentStyle}
                             onMouseEnter={handleMouseEnter}
@@ -206,7 +206,7 @@ export const ProjectCard: React.FC<IProductCard> = memo((props: IProductCard) =>
                                     to={props.hrefLink}
                                     className="pd-actions-view flex w-full justify-between items-center p-3 py-2 
                                     text-black uppercase font-bold bg-white hover:rounded-lg hover:bg-[#010101] 
-                                    hover:text-white hover:border hover:border-gray-600 transition-all duration-300 ease-in-out"
+                                    hover:text-white hover:border hover:border-neutral-600 transition-all duration-300 ease-in-out"
                                     aria-label={`Read more about ${props.projectName}`}
                                 >
                                     <span>Read</span>
@@ -215,7 +215,7 @@ export const ProjectCard: React.FC<IProductCard> = memo((props: IProductCard) =>
 
                                 {/* Download button */}
                                 <button
-                                    className="p-2 hover:bg-gray-800 rounded transition-colors duration-200"
+                                    className="p-2 hover:bg-neutral-800 rounded transition-colors duration-200"
                                     onClick={handleDownload}
                                     aria-label={`Download ${props.projectName}`}
                                     type="button"

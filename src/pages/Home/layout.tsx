@@ -3,6 +3,7 @@ import { portrailImagesOfMe } from '../../util/data/portraitImgs';
 import { Link } from 'react-router-dom';
 import Atropos from 'atropos/react';
 import { Skeleton } from 'antd';
+import PlaceholderImg from '../../assets/gifs/LoaderRender.gif'
 
 const DynamicGrid = () => {
     const [hoveredCell, setHoveredCell] = useState<number | null>(null);
@@ -127,14 +128,14 @@ const DynamicGrid = () => {
                     }`}
                 style={{
                     mixBlendMode: 'screen',
-                    transform: 'scale(1.3)',
+                    // transform: 'scale(1.3)',
                 }}
             >
                 <source src="https://storage.cloud.google.com/engineered-imagination/grunge_textures.mp4" type="video/mp4" />
             </video>
 
             <div
-                className="w-full h-dvh grid transition-all duration-300 ease-out"
+                className="w-full h-dvh grid transition-all duration-300 ease-out overflow-hidden"
                 style={{
                     ...gridStyle,
                     gridTemplateAreas: `
@@ -147,7 +148,8 @@ const DynamicGrid = () => {
                 {/* Cell 1 - Projects */}
                 <Link
                     to='projects'
-                    className="bg-[#010101] border-2 border-gray-200 transition-all duration-500 ease-out cursor-pointer flex items-center justify-center overflow-hidden relative"
+                    className="bg-[#010101] border-2 border-gray-200 transition-all duration-500 ease-out cursor-pointer 
+                    flex items-center justify-center overflow-hidden relative"
                     style={{
                         gridArea: 'cell1',
                         borderColor: hoveredCell === 1 ? 'white' : '',
@@ -178,11 +180,12 @@ const DynamicGrid = () => {
                         loop
                         playsInline
                         preload="auto"
-                        className={`absolute inset-0 w-full h-full object-cover z-10 select-none pointer-events-none bg-[#0736FE] transition-opacity duration-500 ${hoveredCell === 1 ? 'opacity-100' : 'opacity-0'
+                        className={`absolute inset-0 w-full h-full object-cover z-10 select-none pointer-events-none 
+                            bg-[#0736FE] transition-opacity duration-500 ${hoveredCell === 1 ? 'opacity-100' : 'opacity-0'
                             }`}
                         style={{
                             mixBlendMode: 'screen',
-                            transform: 'scale(2.1)'
+                            filter: 'scale(1.2)'
                         }}
                     >
                         <source src="https://storage.cloud.google.com/engineered-imagination/design_showcase.mp4" type="video/mp4" />
@@ -221,7 +224,7 @@ const DynamicGrid = () => {
                         loop
                         playsInline
                         preload="auto"
-                        className={`absolute inset-0 max-w-[1200px] min-w-[1500px] scale-[0.8] z-10 select-none pointer-events-none transition-opacity duration-500 ${hoveredCell === 2 ? 'opacity-100' : 'opacity-0'
+                        className={`absolute inset-0 max-w-[1200px] min-w-[1500px] scale-[1.2] z-10 select-none pointer-events-none transition-opacity duration-500 ${hoveredCell === 2 ? 'opacity-100' : 'opacity-0'
                             }`}
                         style={{
                             mixBlendMode: 'screen',
@@ -250,7 +253,10 @@ const DynamicGrid = () => {
                     onMouseLeave={handleMouseLeave}
                 >
                     {!imagesLoaded ? (
-                        <Skeleton.Image active style={{ width: '100%', height: '100%' }} />
+                        <img
+                            active
+                            src={PlaceholderImg}
+                            style={{ width: '100%', height: '100%' }} />
                     ) : (
                         <>
                             <img
@@ -277,17 +283,19 @@ const DynamicGrid = () => {
                 {/* Cell 4 - Services */}
                 <Link
                     to='skills'
-                    className="bg-[#010101] border-2 border-gray-200 transition-all duration-500 ease-out cursor-pointer flex items-center justify-center overflow-hidden relative"
+                    className="bg-[#010101] border-2 border-gray-200 transition-all duration-500 ease-out cursor-pointer 
+                    flex items-center justify-center overflow-hidden relative"
                     style={{
                         gridArea: 'cell4',
                         borderColor: hoveredCell === 4 ? 'white' : '',
                         zIndex: hoveredCell === 4 ? 10 : 1,
+                        background: hoveredCell === 4 ? 'white' : '#010101'
                     }}
                     onMouseEnter={() => handleMouseEnter(4)}
                     onMouseLeave={handleMouseLeave}
                 >
                     <span
-                        className="font-medium transition-all duration-500 uppercase z-20"
+                        className="font-medium transition-all duration-500 uppercase z-30"
                         style={{
                             fontSize: hoveredCell === 4 ? '4rem' : '3rem',
                             transform: hoveredCell === 4 ? 'scale(1.1)' : 'scale(1)',
@@ -306,15 +314,12 @@ const DynamicGrid = () => {
                         loop
                         playsInline
                         preload="auto"
-                        className={`absolute inset-0 max-w-[1200px] min-w-[800px] z-10 select-none pointer-events-none invert transition-opacity duration-500 ${hoveredCell === 4 ? 'opacity-100' : 'opacity-0'
-                            }`}
+                        className={`max-w-[1200px] min-w-[800px] absolute z-20 select-none pointer-events-none invert-[1]
+                            ${hoveredCell === 4 ? 'opacity-100' : 'opacity-0'}`}
                         style={{
                             mixBlendMode: 'screen',
                             transform: 'rotate(90deg)',
-                            left: '50%',
-                            top: '50%',
-                            marginLeft: '-600px',
-                            marginTop: '-400px'
+                            background: 'white'
                         }}
                     >
                         <source src="https://storage.cloud.google.com/engineered-imagination/video_overlays.mp4" type="video/mp4" />
@@ -353,12 +358,11 @@ const DynamicGrid = () => {
                         loop
                         playsInline
                         preload="auto"
-                        className={`absolute inset-0 max-w-[1200px] min-w-[1500px] scale-[0.8] z-10 select-none pointer-events-none transition-opacity duration-500 ${hoveredCell === 5 ? 'opacity-100' : 'opacity-0'
-                            }`}
+                        className={`max-w-[1500px] min-w-[900px] absolute z-10 select-none pointer-events-none 
+                            ${hoveredCell === 5 ? 'opacity-100' : 'opacity-0'}`}
                         style={{
                             mixBlendMode: 'screen',
-                            left: '50%',
-                            marginLeft: '-750px'
+                            transform: 'rotate(90deg)'
                         }}
                     >
                         <source src="https://storage.cloud.google.com/engineered-imagination/video_overlays.mp4" type="video/mp4" />
