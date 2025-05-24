@@ -1,8 +1,12 @@
 // import React from 'react'
 
+import { PageHeading } from "../../components/Headings"
+
 const Project = () => {
     return (
-        <div>Project</div>
+        <div>
+            {/* <PageHeading text='Projects' /> */}
+        </div>
     )
 }
 
