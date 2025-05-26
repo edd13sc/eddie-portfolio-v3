@@ -1,11 +1,14 @@
 // import React from 'react'
 
+import { useMemo } from "react";
 import { PageHeading } from "../../components/Headings"
 
 const Project = () => {
+    const heading = useMemo(() => <PageHeading text="" />, []);
+
     return (
         <div>
-            {/* <PageHeading text='Projects' /> */}
+            {heading}
         </div>
     )
 }
